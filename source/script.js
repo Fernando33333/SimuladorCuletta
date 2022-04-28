@@ -21,13 +21,6 @@ const propiedad3 = new propiedad ("Cuenca", "Riobamba 639", "Merlo", 5 )
 const propiedad4 = new propiedad ("Perez", "Mitre 280", "Moron", 2 )
 
 */
-
-
-let preferencia = prompt ("Ingrese su preferencia (Depto, Casa, Lote)")
-let localidad = prompt ("ingrese localidad (Merlo, Padua, Ituzaingo)")
-let ambientes = parseFloat (prompt("ingrese cantidad de ambientes (Hasta 6)"))
-
-
 class propiedad {
     constructor (nombre, direccion, localidad, ambientes){
     this.nombre = nombre
@@ -37,17 +30,9 @@ class propiedad {
 }
 }
 
-function Recomendacion (ambientes) {
-    if (ambientes == 1 || ambientes == 2 ) {
-        console.log(propiedad4)
-    } else if (ambientes == 3 || ambientes == 4 ) {
-        console.log(propiedad1)
-    } else if (ambientes == 5 || ambientes == 6 ) {
-        console.log(propiedad3)
-    } else {
-        console.log("Ingrese cantidad de ambientes validos")
-    }
-}
+let preferencia = prompt ("Ingrese su preferencia (Depto, Casa, Lote)")
+let localidad = prompt ("ingrese localidad (Merlo, Padua, Ituzaingo)")
+let ambientes = parseFloat (prompt("ingrese cantidad de ambientes (Hasta 6)"))
 
 const propiedad1 = new propiedad ("Gonzalez", "Independencia 280", "Merlo", 3 )
 const propiedad2 = new propiedad ("Benitez", "Formosa 1108", "San antonio de Padua", 2 )
@@ -55,15 +40,20 @@ const propiedad3 = new propiedad ("Cuenca", "Riobamba 639", "Merlo", 5 )
 const propiedad4 = new propiedad ("Perez", "Mitre 280", "Ituzaingo", 2 )
 
 
-if (ambientes == 1 || ambientes == 2 ) {
-    console.log(propiedad4)
-} else if (ambientes == 3 || ambientes == 4 ) {
-    console.log(propiedad1)
-} else if (ambientes == 5 || ambientes == 6 ) {
-    console.log(propiedad3)
-} else {
-    console.log("Ingrese cantidad de ambientes validos")
-}
+
+function recomendacion(paramAmbientes) {
+    if (paramAmbientes == 1 || paramAmbientes == 2) {
+      console.log(`Propiedad disponible ubicada en ${propiedad4.direccion}, ${propiedad4.localidad}, con ${propiedad4.ambientes} ambientes`);
+    } else if (paramAmbientes == 3 || paramAmbientes == 4) {
+      console.log(`Propiedad disponible ubicada en ${propiedad1.direccion}, ${propiedad1.localidad}, con ${propiedad1.ambientes} ambientes`);
+    } else if (paramAmbientes == 5 || paramAmbientes == 6) {
+      console.log(`Propiedad disponible ubicada en ${propiedad3.direccion}, ${propiedad3.localidad}, con ${propiedad3.ambientes} ambientes`);
+    } else {
+      console.log("Ingrese cantidad de ambientes validos");
+    }
+  }
+  
+  recomendacion(ambientes)
 /*
 
 Juan Manuel, no logré saber que me salió mal acá, tuve que 
